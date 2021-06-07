@@ -41,13 +41,13 @@ class Enderbot(commands.Bot):
           server_embed.add_field(name = 'Players Online: ', value = playerCount, inline = True)
           server_embed.add_field(name = 'Max Occupancy: ', value = maxPlayers, inline = True)
           server_embed.add_field(name = 'Server Plan: ', value = serverPlan, inline = False)
-          server_embed.add_field(name = 'Platform:' , value = platform , inline = True)
+          server_embed.add_field(name = 'Platform:' , value = platform , inline = False)
 
           await ctx.send(embed = server_embed)
     
         #Saving a location
-        @self.command(name = 'save', pass_context = True)
-        async def save(ctx, name, x, y):
+        @self.command(name = 'pin', pass_context = True)
+        async def pin(ctx, name, x, y):
           loc_name = name;
           coordinates = {'X':x, 'Y':y}
 
